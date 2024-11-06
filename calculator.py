@@ -1,6 +1,6 @@
-This account will be used to keep track of my programming progression where the first language will be python.py
+# This account will be used to keep track of my programming progression where the first language will be python.py
 
-this my first project(calculator) I worked with the if,elif,else statements and was able to understand loops better
+# this my first project(calculator) I worked with the if,elif,else statements and was able to understand loops better
 
 
 list = ("+","-","x","/")
