@@ -1,4 +1,4 @@
-this is my second project (hangman)
+# this is my second project (hangman)
 
 import random 
 
