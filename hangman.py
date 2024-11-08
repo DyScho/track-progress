@@ -1,37 +1,40 @@
-in my third project I made a gallows game where you can guess multiple words and it can also end in a game over enjoy !!!
+# in my third project I made a gallows game where you can guess multiple words and it can also end in a game over enjoy !!!
 
-import random
+print('-=-=-=-=-=-=-=-=-=')
+print('Welcome by hangman')
+print('-=-=-=-=-=-=-=-=-=')
 
-print('-=-=-=-=-=-=-=-=-=-=-=-=-=-=-')
-print('welcom by the hangman game !!')
-print('-=-=-=-=-=-=-=-=-=-=-=-=-=-=-')
- 
-list = (["steen","papier","schaar"])
-opnieuw = True 
+wordlist = ['youtube','python','javascript','c++','css','html','programeren','course']
 
-while opnieuw:
+allowed_e = 5
+guesses = []
+done = False
+secret_w = random.choice(wordlist) 
+opniew = True 
 
-    player = None
-    computer = (random.choice(list))
+while opniew: 
+    while not done:
+        for letter in secret_w:
+            if letter.lower() in guesses:
+                print(letter, end=" ")
+            else:
+                print(" _ ", end='' )
+        print("")
 
-    while player not in list:
-        player = input("maak een keuze ! (steen, papier, schaar) ")
+        guess = input(f'you got that many lives {allowed_e} over. pick the next letter : ')
+        guesses.append(guess.lower())
+        if guess.lower() not in secret_w:
+            allowed_e -= 1 
+            if allowed_e == 0:
+                print(f'nex time better ! the word was : {secret_w} !!')
+                break
+    
+        done = True 
+        for letter in secret_w:
+            if letter not in guesses:
+                done = False
 
-    print(f"player:{player}")
-    print(f"computer:{computer}")
-
-    if player == computer:
-        print("that a tie ")
-    elif player == "steen" and computer == "schaar":
-        print("you won")
-    elif player == "papier" and computer == "steen":
-        print("you won")
-    elif player == "schaar" and computer == "papier":
-        print("you won")
-    else:
-        print("you lose")
-
-    if not input("wil je opnieuw splen?? (y/n)").lower() == "y":
-        break 
-
-print('bedankt voor het spelen')
+        if done:
+            print(f"great job you find the word : {secret_w}")
+   
+        print('see you next time !!')
