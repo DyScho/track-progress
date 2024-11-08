@@ -1,11 +1,12 @@
-# this is my second project (hangman)
+# this is my second project (steen papier schaar )
+import random
 
-import random 
+print('-=-=-=-=-=-=-=-=-=-=-=-=-=-=-')
+print('welcom by the hangman game !!')
+print('-=-=-=-=-=-=-=-=-=-=-=-=-=-=-')
 
 list = (["steen","papier","schaar"])
-opnieuw = True
-player = None
-computer = (random.choice(list))
+opnieuw = True 
 
 while opnieuw:
 
@@ -30,6 +31,6 @@ while opnieuw:
         print("you lose")
 
     if not input("wil je opnieuw splen?? (y/n)").lower() == "y":
-        opnieuw = False
+        break 
 
-print("bedankt voor het spelen")
+print('bedankt voor het spelen')
